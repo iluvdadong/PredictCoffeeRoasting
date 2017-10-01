@@ -52,9 +52,22 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {
-        extractColor(image: imagePicked.image!)
+        
+        if imagePicked.image == nil {
+            let dialog = UIAlertController(title: "select the white papaer pls :)", message: nil, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            dialog.addAction(action)
+            
+            self.present(dialog, animated: true, completion: nil)
+            
+            
+        } else {
+            extractColor(image: imagePicked.image!)
+        }
     }
     
+   
     
     func extractColor(image: UIImage){
         let pixel = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
