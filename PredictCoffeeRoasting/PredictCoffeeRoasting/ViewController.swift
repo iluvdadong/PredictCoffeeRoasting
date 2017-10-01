@@ -50,18 +50,22 @@ UINavigationControllerDelegate {
     
     @IBAction func predictButton(_ sender: Any) {
         
-        var imageData = UIImageJPEGRepresentation(imagePicked.image!, 0.6)
-        var compressedJPGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        let alertController = UIAlertController(title: "Title", message: "This is my text", preferredStyle: UIAlertControllerStyle.alert)
         
-        var alert = UIAlertView(title: "Wow",
-                                message: "Your image has been saved to Photo Library!",
-                                delegate: nil,
-                                cancelButtonTitle: "Ok")
-        alert.show()
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+            print("You pressed OK")
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imagePicked.image = image
+        dismiss(animated:true, completion: nil)
+    }
     
 }
 
