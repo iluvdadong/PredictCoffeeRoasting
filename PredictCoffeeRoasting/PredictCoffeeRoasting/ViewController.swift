@@ -13,10 +13,12 @@ UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePicked: UIImageView!
+    @IBOutlet weak var predictButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        predictButton.layer.cornerRadius = predictButton.frame.width/2
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,5 +47,21 @@ UINavigationControllerDelegate {
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func predictButton(_ sender: Any) {
+        
+        var imageData = UIImageJPEGRepresentation(imagePicked.image!, 0.6)
+        var compressedJPGImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        
+        var alert = UIAlertView(title: "Wow",
+                                message: "Your image has been saved to Photo Library!",
+                                delegate: nil,
+                                cancelButtonTitle: "Ok")
+        alert.show()
+    }
+    
+    
+    
 }
 

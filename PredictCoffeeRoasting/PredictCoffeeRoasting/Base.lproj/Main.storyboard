@@ -22,48 +22,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABw-uN-vwB">
-                                <rect key="frame" x="325" y="30" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-bJ-xvS">
                                 <rect key="frame" x="16" y="70" width="343" height="297"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-CO-mHb">
-                                <rect key="frame" x="149" y="417" width="77" height="30"/>
+                                <rect key="frame" x="149" y="397" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7E-MD-kli"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFb-Nq-55W">
-                                <rect key="frame" x="121" y="461" width="134" height="30"/>
+                                <rect key="frame" x="121" y="435" width="134" height="30"/>
                                 <state key="normal" title="Open Photo Library"/>
                                 <connections>
                                     <action selector="openPhotoLibararyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWf-mA-WYl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABw-uN-vwB">
+                                <rect key="frame" x="137.5" y="499" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.74081932106598991" green="0.11081976295762824" blue="0.0064005185627260541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Yt2-fT-GYu"/>
+                                    <constraint firstAttribute="width" constant="100" id="tNW-oV-cq3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                <state key="normal" title="Predict!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="predictButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CyE-jv-iid"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PFb-Nq-55W" firstAttribute="top" secondItem="LwG-CO-mHb" secondAttribute="bottom" constant="14" id="42l-LF-Lgp"/>
+                            <constraint firstItem="ABw-uN-vwB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Fh-ft-k6o"/>
+                            <constraint firstItem="PFb-Nq-55W" firstAttribute="top" secondItem="LwG-CO-mHb" secondAttribute="bottom" constant="8" id="42l-LF-Lgp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RkC-bJ-xvS" secondAttribute="trailing" id="9On-Cb-cC5"/>
                             <constraint firstItem="PFb-Nq-55W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eeb-bY-Uiu"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="QEE-ak-fim"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TzY-0r-tTY"/>
-                            <constraint firstItem="LwG-CO-mHb" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="50" id="UG5-gz-kSb"/>
-                            <constraint firstItem="ABw-uN-vwB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="UKU-PC-SRQ"/>
+                            <constraint firstItem="LwG-CO-mHb" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="30" id="UG5-gz-kSb"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eZS-U6-jE3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ABw-uN-vwB" secondAttribute="trailing" id="gQb-Ra-ejd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABw-uN-vwB" secondAttribute="bottom" constant="68" id="piT-CL-x5F"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="300" id="wJj-Uw-20O"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imagePicked" destination="RkC-bJ-xvS" id="HcM-SG-OJZ"/>
+                        <outlet property="predictButton" destination="ABw-uN-vwB" id="NeN-NX-JE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>
