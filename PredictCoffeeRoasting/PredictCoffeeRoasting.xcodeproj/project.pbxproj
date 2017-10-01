@@ -54,14 +54,30 @@
 		D40B15EA1F80E84400A470D3 /* PredictCoffeeRoasting */ = {
 			isa = PBXGroup;
 			children = (
+				D40B15FE1F80EA2600A470D3 /* StoryBoard */,
+				D40B15FD1F80EA1900A470D3 /* ViewController */,
 				D40B15EB1F80E84400A470D3 /* AppDelegate.swift */,
-				D40B15ED1F80E84400A470D3 /* ViewController.swift */,
-				D40B15EF1F80E84400A470D3 /* Main.storyboard */,
 				D40B15F21F80E84400A470D3 /* Assets.xcassets */,
 				D40B15F41F80E84400A470D3 /* LaunchScreen.storyboard */,
 				D40B15F71F80E84400A470D3 /* Info.plist */,
 			);
 			path = PredictCoffeeRoasting;
+			sourceTree = "<group>";
+		};
+		D40B15FD1F80EA1900A470D3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D40B15ED1F80E84400A470D3 /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D40B15FE1F80EA2600A470D3 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D40B15EF1F80E84400A470D3 /* Main.storyboard */,
+			);
+			name = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
