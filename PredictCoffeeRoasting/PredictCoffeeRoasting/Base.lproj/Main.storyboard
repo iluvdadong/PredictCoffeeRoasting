@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TEM-Wk-gEF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mLJ-qO-Exr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Start-->
         <scene sceneID="hqh-En-eMu">
             <objects>
                 <viewController id="TEM-Wk-gEF" customClass="MainViewController" customModule="PredictCoffeeRoasting" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,40 +22,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo of plain white paper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGR-hs-qe1">
-                                <rect key="frame" x="67" y="40" width="240" height="21"/>
+                                <rect key="frame" x="67" y="84" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j3g-rF-cSL">
-                                <rect key="frame" x="0.0" y="71" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="300"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="mRR-lb-YaJ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-jv-vKJ">
-                                <rect key="frame" x="148.5" y="407" width="77" height="30"/>
+                                <rect key="frame" x="148.5" y="451" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="openCameraButton:" destination="TEM-Wk-gEF" eventType="touchUpInside" id="fSg-Gk-B7U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Si8-pj-yTp">
-                                <rect key="frame" x="120" y="445" width="134" height="30"/>
+                                <rect key="frame" x="120" y="489" width="134" height="30"/>
                                 <state key="normal" title="Open Photo Library"/>
+                                <connections>
+                                    <action selector="openPhotoLibararyButton:" destination="TEM-Wk-gEF" eventType="touchUpInside" id="NIU-Kc-uIy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAb-ia-5yb">
-                                <rect key="frame" x="137.5" y="527" width="100" height="40"/>
+                                <rect key="frame" x="137.5" y="587" width="100" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BAl-ve-xCB"/>
                                     <constraint firstAttribute="width" constant="100" id="b8V-fx-c85"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Next &gt; ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ILA-Q7-TYE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dZy-IQ-e0E" firstAttribute="top" secondItem="VAb-ia-5yb" secondAttribute="bottom" constant="100" id="073-on-i1M"/>
+                            <constraint firstItem="dZy-IQ-e0E" firstAttribute="top" secondItem="VAb-ia-5yb" secondAttribute="bottom" constant="40" id="073-on-i1M"/>
                             <constraint firstItem="j3g-rF-cSL" firstAttribute="centerX" secondItem="bqd-AS-Tov" secondAttribute="centerX" id="2jc-oG-w9F"/>
                             <constraint firstItem="rGR-hs-qe1" firstAttribute="centerX" secondItem="bqd-AS-Tov" secondAttribute="centerX" id="CvA-bc-UWT"/>
                             <constraint firstItem="j3g-rF-cSL" firstAttribute="leading" secondItem="bqd-AS-Tov" secondAttribute="leading" id="IfR-YF-P7Y"/>
@@ -69,13 +79,15 @@
                             <constraint firstItem="VAb-ia-5yb" firstAttribute="centerX" secondItem="bqd-AS-Tov" secondAttribute="centerX" id="yCD-cU-SM8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Start" id="f9H-46-RGC"/>
                     <connections>
+                        <outlet property="imagePicked" destination="j3g-rF-cSL" id="zFA-mE-0Sh"/>
                         <outlet property="nextButton" destination="VAb-ia-5yb" id="34J-R9-QLN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lh-Sp-oNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703.20000000000005" y="59.820089955022496"/>
+            <point key="canvasLocation" x="236" y="59.820089955022496"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -90,37 +102,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-bJ-xvS">
-                                <rect key="frame" x="0.0" y="71" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="300"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="jYw-k7-1GO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-CO-mHb">
-                                <rect key="frame" x="149" y="407" width="77" height="30"/>
+                                <rect key="frame" x="149" y="451" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7E-MD-kli"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFb-Nq-55W">
-                                <rect key="frame" x="121" y="445" width="134" height="30"/>
+                                <rect key="frame" x="121" y="489" width="134" height="30"/>
                                 <state key="normal" title="Open Photo Library"/>
                                 <connections>
                                     <action selector="openPhotoLibararyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWf-mA-WYl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo of coffee roasting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-g1-kzv">
-                                <rect key="frame" x="75" y="40" width="224.5" height="21"/>
+                                <rect key="frame" x="75" y="84" width="224.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABw-uN-vwB">
-                                <rect key="frame" x="137.5" y="499" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="587" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.74081932106598991" green="0.11081976295762824" blue="0.0064005185627260541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Yt2-fT-GYu"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yt2-fT-GYu"/>
                                     <constraint firstAttribute="width" constant="100" id="tNW-oV-cq3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -144,7 +156,7 @@
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TzY-0r-tTY"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="36" id="YDe-3G-Q70"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aoY-IO-oml"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABw-uN-vwB" secondAttribute="bottom" constant="68" id="piT-CL-x5F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABw-uN-vwB" secondAttribute="bottom" constant="40" id="piT-CL-x5F"/>
                             <constraint firstItem="2e4-g1-kzv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vke-td-cig"/>
                         </constraints>
                     </view>
@@ -155,7 +167,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.799999999999997" y="59.820089955022496"/>
+            <point key="canvasLocation" x="1036" y="59.820089955022496"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cSm-Ui-0zc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLJ-qO-Exr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRy-hI-6A9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TEM-Wk-gEF" kind="relationship" relationship="rootViewController" id="qdj-US-0y7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mds-Xu-sa6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703.20000000000005" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>

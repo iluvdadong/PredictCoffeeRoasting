@@ -17,14 +17,10 @@ UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        predictButton.layer.cornerRadius = predictButton.frame.width/2
+        predictButton.layer.cornerRadius  = 20
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func openCameraButton(_ sender: Any) {
         
