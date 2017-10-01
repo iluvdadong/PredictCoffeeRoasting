@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,9 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-bJ-xvS">
-                                <rect key="frame" x="16" y="70" width="343" height="297"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-bJ-xvS">
+                                <rect key="frame" x="39" y="70" width="297" height="297"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RkC-bJ-xvS" secondAttribute="height" id="fGD-MF-njA"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-CO-mHb">
                                 <rect key="frame" x="149" y="397" width="77" height="30"/>
@@ -60,12 +63,11 @@
                         <constraints>
                             <constraint firstItem="ABw-uN-vwB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Fh-ft-k6o"/>
                             <constraint firstItem="PFb-Nq-55W" firstAttribute="top" secondItem="LwG-CO-mHb" secondAttribute="bottom" constant="8" id="42l-LF-Lgp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RkC-bJ-xvS" secondAttribute="trailing" id="9On-Cb-cC5"/>
                             <constraint firstItem="PFb-Nq-55W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eeb-bY-Uiu"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="QEE-ak-fim"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TzY-0r-tTY"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="30" id="UG5-gz-kSb"/>
-                            <constraint firstItem="RkC-bJ-xvS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eZS-U6-jE3"/>
+                            <constraint firstItem="RkC-bJ-xvS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aoY-IO-oml"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABw-uN-vwB" secondAttribute="bottom" constant="68" id="piT-CL-x5F"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="300" id="wJj-Uw-20O"/>
                         </constraints>
