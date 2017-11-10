@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class ViewController: UIViewController,
 UIImagePickerControllerDelegate,
@@ -14,10 +15,15 @@ UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var predictButton: UIButton!
+    @IBOutlet weak var caliButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         predictButton.layer.cornerRadius  = 20
+        
+       
+        
         
     }
 
@@ -62,6 +68,35 @@ UINavigationControllerDelegate {
         imagePicked.image = image
         dismiss(animated:true, completion: nil)
     }
+    
+    @IBAction func imageCalibration(_ sender: Any) {
+        
+        
+        
+        guard let image = imagePicked?.image, let cgimg = image.cgImage else {
+            print("imageView doesn't have an image!")
+            return
+        }
+        
+        let coreImage = CIImage(cgImage: cgimg)
+        
+        let filter = CIFilter(name: "CISepiaTone")
+        filter?.setValue(coreImage, forKey: kCIInputImageKey)
+        filter?.setValue(0.5, forKey: kCIInputIntensityKey)
+        
+        if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
+            let filteredImage = UIImage(ciImage: output)
+            imagePicked?.image = filteredImage
+        }
+            
+        else {
+            print("image filtering failed")
+        }
+        
+        
+    }
+    
+    
     
 }
 

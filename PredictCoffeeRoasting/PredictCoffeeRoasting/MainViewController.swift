@@ -93,12 +93,19 @@ UINavigationControllerDelegate {
         
         if color != nil {
             print( self.toHexString(color: color!) )
-            var hexValue:String = self.toHexString(color: color!)
+            let hexValue:String = self.toHexString(color: color!)
             print(self.hexStringToUIColor(hex: hexValue ))
-            var userRedValue = self.hexStringToUIColorRed(hex: hexValue)
+            let userRedValue = self.hexStringToUIColorRed(hex: hexValue)
             print(userRedValue)
-        
-     
+            let userGreenValue = self.hexStringToUIColorGreen(hex: hexValue)
+            print(userGreenValue)
+            let userBlueValue = self.hexStringToUIColorBlue(hex: hexValue)
+            print(userBlueValue)
+            
+            
+            print(caclultateRedValue(red: userRedValue))
+            print(caclultateGreenValue(green: userGreenValue))
+            print(caclultateBlueValue(blue: userBlueValue))
         
         }
         pixel.deallocate(capacity: 4)
@@ -154,10 +161,76 @@ UINavigationControllerDelegate {
         Scanner(string: cString).scanHexInt32(&rgbValue)
         
         
-        var redValue = CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0
+        let redValue = CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0
         return redValue
 
     }
+    
+    func hexStringToUIColorGreen (hex:String) -> CGFloat {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        
+        let greenValue = CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0
+        return greenValue
+        
+    }
+    
+    func hexStringToUIColorBlue (hex:String) -> CGFloat {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        
+        let blueValue = CGFloat(rgbValue & 0x0000FF) / 255.0
+        return blueValue
+        
+    }
+    
+    func caclultateRedValue (red:CGFloat) -> CGFloat {
+
+        var caculatedRed:CGFloat = 0.84 - red
+        
+        if caculatedRed < 0 {
+            caculatedRed = caculatedRed*(-1)
+        }
+        return caculatedRed
+        
+    }
+    
+    func caclultateGreenValue (green:CGFloat) -> CGFloat {
+        
+        var caculatedGreen:CGFloat = 0.82 - green
+        
+        if caculatedGreen < 0 {
+            caculatedGreen = caculatedGreen*(-1)
+        }
+        return caculatedGreen
+        
+    }
+    
+    func caclultateBlueValue (blue:CGFloat) -> CGFloat {
+        
+        var caculatedBlue:CGFloat = 0.81 - blue
+        
+        if caculatedBlue < 0 {
+            caculatedBlue = caculatedBlue*(-1)
+        }
+        return caculatedBlue
+        
+    }
+    
 //
 //        if color != nil {
 //            print( self.toHexString(color: color!) )

@@ -144,6 +144,15 @@
                                     <action selector="predictButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CyE-jv-iid"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGi-M2-oJu">
+                                <rect key="frame" x="150" y="540" width="74" height="30"/>
+                                <state key="normal" title="Calibration">
+                                    <color key="titleColor" red="0.74081932110000004" green="0.110819763" blue="0.0064005185629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="imageCalibration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9c-Mf-6rn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -152,23 +161,27 @@
                             <constraint firstItem="PFb-Nq-55W" firstAttribute="top" secondItem="LwG-CO-mHb" secondAttribute="bottom" constant="8" id="42l-LF-Lgp"/>
                             <constraint firstItem="PFb-Nq-55W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eeb-bY-Uiu"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="top" secondItem="2e4-g1-kzv" secondAttribute="bottom" constant="10" id="FyO-yF-lzM"/>
+                            <constraint firstItem="ABw-uN-vwB" firstAttribute="top" secondItem="jGi-M2-oJu" secondAttribute="bottom" constant="17" id="HeN-3k-MjQ"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MXJ-E6-0fa"/>
                             <constraint firstAttribute="trailing" secondItem="RkC-bJ-xvS" secondAttribute="trailing" id="RIq-0Q-hNA"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TzY-0r-tTY"/>
                             <constraint firstItem="LwG-CO-mHb" firstAttribute="top" secondItem="RkC-bJ-xvS" secondAttribute="bottom" constant="36" id="YDe-3G-Q70"/>
                             <constraint firstItem="RkC-bJ-xvS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aoY-IO-oml"/>
+                            <constraint firstItem="jGi-M2-oJu" firstAttribute="top" secondItem="PFb-Nq-55W" secondAttribute="bottom" constant="21" id="k37-7d-OPO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABw-uN-vwB" secondAttribute="bottom" constant="40" id="piT-CL-x5F"/>
+                            <constraint firstItem="jGi-M2-oJu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vVf-bx-NY7"/>
                             <constraint firstItem="2e4-g1-kzv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vke-td-cig"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="caliButton" destination="jGi-M2-oJu" id="3tl-Q3-ZRv"/>
                         <outlet property="imagePicked" destination="RkC-bJ-xvS" id="HcM-SG-OJZ"/>
                         <outlet property="predictButton" destination="ABw-uN-vwB" id="NeN-NX-JE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="59.820089955022496"/>
+            <point key="canvasLocation" x="980" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cSm-Ui-0zc">
