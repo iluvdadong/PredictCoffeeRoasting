@@ -22,9 +22,6 @@ UINavigationControllerDelegate {
         
         predictButton.layer.cornerRadius  = 20
         
-       
-        
-        
     }
 
 

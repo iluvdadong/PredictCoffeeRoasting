@@ -90,7 +90,7 @@ UINavigationControllerDelegate {
             color = UIColor(red: CGFloat(pixel[0]) / 255.0, green: CGFloat(pixel[1]) / 255.0, blue: CGFloat(pixel[2]) / 255.0, alpha: CGFloat(pixel[3]) / 255.0)
         }
         
-        
+        // 최종
         if color != nil {
             print( self.toHexString(color: color!) )
             let hexValue:String = self.toHexString(color: color!)
@@ -110,6 +110,7 @@ UINavigationControllerDelegate {
         }
         pixel.deallocate(capacity: 4)
     }
+    
     
     func toHexString(color: UIColor) -> String {
         var r:CGFloat = 0
@@ -198,9 +199,12 @@ UINavigationControllerDelegate {
         
     }
     
+    //0.84 우리 흰종이 R
+    //red는 사용자 흰종이 R
+    
     func caclultateRedValue (red:CGFloat) -> CGFloat {
 
-        var caculatedRed:CGFloat = 0.84 - red
+        var caculatedRed:CGFloat = 0.84 / red
         
         if caculatedRed < 0 {
             caculatedRed = caculatedRed*(-1)
@@ -211,7 +215,7 @@ UINavigationControllerDelegate {
     
     func caclultateGreenValue (green:CGFloat) -> CGFloat {
         
-        var caculatedGreen:CGFloat = 0.82 - green
+        var caculatedGreen:CGFloat = 0.82 / green
         
         if caculatedGreen < 0 {
             caculatedGreen = caculatedGreen*(-1)
@@ -222,7 +226,7 @@ UINavigationControllerDelegate {
     
     func caclultateBlueValue (blue:CGFloat) -> CGFloat {
         
-        var caculatedBlue:CGFloat = 0.81 - blue
+        var caculatedBlue:CGFloat = 0.81 / blue
         
         if caculatedBlue < 0 {
             caculatedBlue = caculatedBlue*(-1)
