@@ -21,6 +21,11 @@ UINavigationControllerDelegate {
         super.viewDidLoad()
         
         predictButton.layer.cornerRadius  = 20
+        let (finalRed, finalGreen, finalBlue) = MainViewController.shared.extractColor(image: MainViewController.shared.imagePicked.image!)
+        
+        print("passedRed : \(finalRed)")
+        print("passedGreen : \(finalGreen)")
+        print("passedBlue : \(finalBlue)")
         
     }
 

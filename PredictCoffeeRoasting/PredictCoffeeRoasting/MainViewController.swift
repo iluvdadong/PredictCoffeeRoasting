@@ -8,9 +8,12 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
+    
+    static let shared:MainViewController = MainViewController()
 
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imagePicked: UIImageView!
@@ -19,7 +22,7 @@ UINavigationControllerDelegate {
         super.viewDidLoad()
 
         nextButton.layer.cornerRadius = 20
-        
+    
     }
 
     
@@ -63,13 +66,14 @@ UINavigationControllerDelegate {
             
             
         } else {
-            extractColor(image: imagePicked.image!)
+            let (finalRed, finalGreen, finalBlue) = extractColor(image: imagePicked.image!)
+            print("hihihihihihih")
         }
     }
     
    
     
-    func extractColor(image: UIImage){
+    func extractColor(image: UIImage) -> (CGFloat, CGFloat, CGFloat) {
         let pixel = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
         let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
@@ -102,13 +106,18 @@ UINavigationControllerDelegate {
             let userBlueValue = self.hexStringToUIColorBlue(hex: hexValue)
             print(userBlueValue)
             
+        
+            var caculatedRed:CGFloat = caclultateRedValue(red: userRedValue)
+            var caculatedGreen:CGFloat = caclultateGreenValue(green: userGreenValue)
+            var cacultedBlue:CGFloat = caclultateBlueValue(blue: userBlueValue)
             
-            print(caclultateRedValue(red: userRedValue))
-            print(caclultateGreenValue(green: userGreenValue))
-            print(caclultateBlueValue(blue: userBlueValue))
+            return (caculatedRed, caculatedGreen, cacultedBlue)
+
         
         }
         pixel.deallocate(capacity: 4)
+        
+        return(0,0,0)
     }
     
     
