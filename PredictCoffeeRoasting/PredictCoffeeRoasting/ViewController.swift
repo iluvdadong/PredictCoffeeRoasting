@@ -17,18 +17,24 @@ UINavigationControllerDelegate {
     @IBOutlet weak var predictButton: UIButton!
     @IBOutlet weak var caliButton: UIButton!
     
+    var redData = String()
+    var greenData = String()
+    var blueData = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //var redDataFinal = redData
+        //var greenDataFinal = greenData
+       // var blueDataFinal = blueData
+        
         predictButton.layer.cornerRadius  = 20
-        let (finalRed, finalGreen, finalBlue) = MainViewController.shared.extractColor(image: MainViewController.shared.imagePicked.image!)
+    //    let (finalRed, finalGreen, finalBlue) = MainViewController.shared.extractColor(image: MainViewController.shared.imagePicked.image!)
         
-        print("passedRed : \(finalRed)")
-        print("passedGreen : \(finalGreen)")
-        print("passedBlue : \(finalBlue)")
-        
+        print("passedRed : \(redData)")
+        print("passedGreen : \(greenData)")
+        print("passedBlue : \(blueData)")
     }
-
 
     @IBAction func openCameraButton(_ sender: Any) {
         

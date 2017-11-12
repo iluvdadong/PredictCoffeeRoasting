@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mLJ-qO-Exr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mLJ-qO-Exr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-jv-vKJ">
-                                <rect key="frame" x="148.5" y="451" width="77" height="30"/>
+                                <rect key="frame" x="149" y="451" width="76" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="openCameraButton:" destination="TEM-Wk-gEF" eventType="touchUpInside" id="fSg-Gk-B7U"/>
@@ -60,16 +61,48 @@
                                 </state>
                                 <connections>
                                     <action selector="nextBtnAction:" destination="TEM-Wk-gEF" eventType="touchUpInside" id="EPY-Or-pN4"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ILA-Q7-TYE"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7U-JH-9NM">
+                                <rect key="frame" x="16" y="452" width="1" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="K2z-oG-nmG"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-8e-rDn">
+                                <rect key="frame" x="16" y="477" width="1" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="ANN-dd-TqA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-hi-MGD">
+                                <rect key="frame" x="16" y="502" width="1" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="oCF-mI-xWa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dZy-IQ-e0E" firstAttribute="top" secondItem="VAb-ia-5yb" secondAttribute="bottom" constant="40" id="073-on-i1M"/>
                             <constraint firstItem="j3g-rF-cSL" firstAttribute="centerX" secondItem="bqd-AS-Tov" secondAttribute="centerX" id="2jc-oG-w9F"/>
+                            <constraint firstItem="f7U-JH-9NM" firstAttribute="leading" secondItem="bqd-AS-Tov" secondAttribute="leadingMargin" id="3K4-Nn-gyM"/>
+                            <constraint firstItem="OSf-hi-MGD" firstAttribute="top" secondItem="D6v-8e-rDn" secondAttribute="bottom" constant="8" id="83g-3i-h0M"/>
                             <constraint firstItem="rGR-hs-qe1" firstAttribute="centerX" secondItem="bqd-AS-Tov" secondAttribute="centerX" id="CvA-bc-UWT"/>
+                            <constraint firstItem="D6v-8e-rDn" firstAttribute="top" secondItem="f7U-JH-9NM" secondAttribute="bottom" constant="8" id="Fbe-DN-Jey"/>
+                            <constraint firstItem="f7U-JH-9NM" firstAttribute="top" secondItem="j3g-rF-cSL" secondAttribute="bottom" constant="37" id="GI5-X0-O7s"/>
+                            <constraint firstItem="OSf-hi-MGD" firstAttribute="leading" secondItem="bqd-AS-Tov" secondAttribute="leadingMargin" id="IF5-oD-o0T"/>
                             <constraint firstItem="j3g-rF-cSL" firstAttribute="leading" secondItem="bqd-AS-Tov" secondAttribute="leading" id="IfR-YF-P7Y"/>
+                            <constraint firstItem="D6v-8e-rDn" firstAttribute="leading" secondItem="bqd-AS-Tov" secondAttribute="leadingMargin" id="PCK-R9-5wy"/>
                             <constraint firstItem="rGR-hs-qe1" firstAttribute="top" secondItem="we7-hc-NRs" secondAttribute="bottom" constant="20" id="VPx-I7-iGb"/>
                             <constraint firstItem="Si8-pj-yTp" firstAttribute="top" secondItem="O3h-jv-vKJ" secondAttribute="bottom" constant="8" id="at4-xj-LSg"/>
                             <constraint firstItem="j3g-rF-cSL" firstAttribute="top" secondItem="rGR-hs-qe1" secondAttribute="bottom" constant="10" id="d98-tq-ccu"/>
@@ -82,8 +115,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Start" id="f9H-46-RGC"/>
                     <connections>
+                        <outlet property="blueTextField" destination="OSf-hi-MGD" id="fhN-8I-zFo"/>
+                        <outlet property="greenTextField" destination="D6v-8e-rDn" id="hTX-Rz-rsT"/>
                         <outlet property="imagePicked" destination="j3g-rF-cSL" id="zFA-mE-0Sh"/>
                         <outlet property="nextButton" destination="VAb-ia-5yb" id="34J-R9-QLN"/>
+                        <outlet property="redTextField" destination="f7U-JH-9NM" id="2NF-Nd-i5G"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="NRh-tB-bB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Lh-Sp-oNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +147,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwG-CO-mHb">
-                                <rect key="frame" x="149" y="451" width="77" height="30"/>
+                                <rect key="frame" x="149.5" y="451" width="76" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7E-MD-kli"/>
@@ -124,7 +161,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo of coffee roasting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-g1-kzv">
-                                <rect key="frame" x="75" y="84" width="224.5" height="21"/>
+                                <rect key="frame" x="75.5" y="84" width="224" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -189,7 +226,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLJ-qO-Exr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRy-hI-6A9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -18,14 +18,15 @@ UINavigationControllerDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imagePicked: UIImageView!
     
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         nextButton.layer.cornerRadius = 20
-    
     }
 
-    
     @IBAction func openCameraButton(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -55,6 +56,11 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func nextBtnAction(_ sender: Any) {
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if imagePicked.image == nil {
             let dialog = UIAlertController(title: "select the white papaer pls :)", message: nil, preferredStyle: .alert)
@@ -64,14 +70,33 @@ UINavigationControllerDelegate {
             
             self.present(dialog, animated: true, completion: nil)
             
-            
         } else {
+            
             let (finalRed, finalGreen, finalBlue) = extractColor(image: imagePicked.image!)
-            print("hihihihihihih")
+            print("original/user : ")
+            print(finalRed, finalGreen, finalBlue)
+            print("passed1")
+            
+            let red = String(describing: finalRed)
+            redTextField.text = red
+            let green = String(describing: finalGreen)
+            greenTextField.text = green
+            let blue = String(describing: finalBlue)
+            blueTextField.text = blue
+            
+            var secondController = segue.destination as! ViewController
+            secondController.redData = redTextField.text!
+            secondController.greenData = greenTextField.text!
+            secondController.blueData = blueTextField.text!
+            print("red \(redTextField.text)" )
+            print("green \(greenTextField.text)" )
+            print("blue \(blueTextField.text)" )
+            
+            
         }
+
     }
-    
-   
+
     
     func extractColor(image: UIImage) -> (CGFloat, CGFloat, CGFloat) {
         let pixel = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
