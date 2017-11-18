@@ -21,12 +21,13 @@ UINavigationControllerDelegate {
     var greenData = String()
     var blueData = String()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //var redDataFinal = redData
-        //var greenDataFinal = greenData
-       // var blueDataFinal = blueData
+        // var redDataFinal = redData
+        // var greenDataFinal = greenData
+        // var blueDataFinal = blueData
         
         predictButton.layer.cornerRadius  = 20
     //    let (finalRed, finalGreen, finalBlue) = MainViewController.shared.extractColor(image: MainViewController.shared.imagePicked.image!)
@@ -78,8 +79,6 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func imageCalibration(_ sender: Any) {
-        
-        
         
         guard let image = imagePicked?.image, let cgimg = image.cgImage else {
             print("imageView doesn't have an image!")

@@ -1,47 +1,40 @@
 //
-//  MainViewController.swift
-//  PredictCoffeeRoasting
+//  CalibrationViewController.swift
+//  CustomVision
 //
-//  Created by 맥동이 on 2017. 10. 2..
-//  Copyright © 2017년 donggukVision. All rights reserved.
+//  Created by 맥동이 on 2017. 11. 18..
+//  Copyright © 2017년 Adam Behringer. All rights reserved.
 //
 
 import UIKit
 
-
-class MainViewController: UIViewController,
-UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+class CalibrationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    static let shared:MainViewController = MainViewController()
-
-    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imagePicked: UIImageView!
-    
-    @IBOutlet weak var redTextField: UITextField!
-    @IBOutlet weak var greenTextField: UITextField!
-    @IBOutlet weak var blueTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.layer.cornerRadius = 20
+        self.view.addSubview(imagePicked)
+        
+        // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func openCameraButton(_ sender: Any) {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
+        
     }
     
-    @IBAction func openPhotoLibararyButton(_ sender: Any) {
-        
+    
+    @IBAction func openLibrary(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary;
             imagePicker.allowsEditing = true
@@ -49,13 +42,14 @@ UINavigationControllerDelegate {
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
         imagePicked.image = image
         dismiss(animated:true, completion: nil)
     }
     
-    @IBAction func nextBtnAction(_ sender: Any) {
+    @IBAction func calibrationButton(_ sender: Any) {
         
         if imagePicked.image == nil {
             let dialog = UIAlertController(title: "select the white papaer pls :)", message: nil, preferredStyle: .alert)
@@ -67,39 +61,16 @@ UINavigationControllerDelegate {
             
         } else {
             
-            let (finalRed, finalGreen, finalBlue) = extractColor(image: imagePicked.image!)
+         
             print("original/user : ")
-            print(finalRed, finalGreen, finalBlue)
+            
             print("passed1")
             
-            let red = String(describing: finalRed)
-            redTextField.text = red
-            let green = String(describing: finalGreen)
-            greenTextField.text = green
-            let blue = String(describing: finalBlue)
-            blueTextField.text = blue
-            
-           // var secondController = segue.destination as! ViewController
-            //secondController.redData = redTextField.text!
-            //secondController.greenData = greenTextField.text!
-            //secondController.blueData = blueTextField.text!
-            //print("red \(redTextField.text)" )
-            //print("green \(greenTextField.text)" )
-            //print("blue \(blueTextField.text)" )
             
             
         }
         
-        performSegue(withIdentifier: "segue", sender: self)
     }
-    
-
-   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    
-
-   // }
-
     
     func extractColor(image: UIImage) -> (CGFloat, CGFloat, CGFloat) {
         let pixel = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
@@ -134,14 +105,14 @@ UINavigationControllerDelegate {
             let userBlueValue = self.hexStringToUIColorBlue(hex: hexValue)
             print(userBlueValue)
             
-        
+            
             var caculatedRed:CGFloat = caclultateRedValue(red: userRedValue)
             var caculatedGreen:CGFloat = caclultateGreenValue(green: userGreenValue)
             var cacultedBlue:CGFloat = caclultateBlueValue(blue: userBlueValue)
             
             return (caculatedRed, caculatedGreen, cacultedBlue)
-
-        
+            
+            
         }
         pixel.deallocate(capacity: 4)
         
@@ -178,7 +149,7 @@ UINavigationControllerDelegate {
         Scanner(string: cString).scanHexInt32(&rgbValue)
         
         return UIColor(
-
+            
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
@@ -201,7 +172,7 @@ UINavigationControllerDelegate {
         
         let redValue = CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0
         return redValue
-
+        
     }
     
     func hexStringToUIColorGreen (hex:String) -> CGFloat {
@@ -240,7 +211,7 @@ UINavigationControllerDelegate {
     //red는 사용자 흰종이 R
     
     func caclultateRedValue (red:CGFloat) -> CGFloat {
-
+        
         var caculatedRed:CGFloat = 0.84 / red
         
         if caculatedRed < 0 {
@@ -272,27 +243,5 @@ UINavigationControllerDelegate {
         
     }
     
-//
-//        if color != nil {
-//            print( self.toHexString(color: color!) )
-//        }
-//        pixel.deallocate(capacity: 4)
-//    }
-//    
-//    func toHexString(color: UIColor) -> String {
-//        var r:CGFloat = 0
-//        var g:CGFloat = 0
-//        var b:CGFloat = 0
-//        var a:CGFloat = 0
-//        
-//        color.getRed(&r, green: &g, blue: &b, alpha: &a)
-//        
-//        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-//        
-//        return String(format:"#%06x", rgb)
-//    }
-//   
     
 }
-
-

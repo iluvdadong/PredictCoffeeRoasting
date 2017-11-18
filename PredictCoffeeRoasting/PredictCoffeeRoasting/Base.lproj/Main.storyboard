@@ -117,7 +117,7 @@
                     <connections>
                         <outlet property="blueTextField" destination="OSf-hi-MGD" id="fhN-8I-zFo"/>
                         <outlet property="greenTextField" destination="D6v-8e-rDn" id="hTX-Rz-rsT"/>
-                        <outlet property="imagePicked" destination="j3g-rF-cSL" id="zFA-mE-0Sh"/>
+                        <outlet property="imagePicked" destination="j3g-rF-cSL" id="nMh-ap-GqX"/>
                         <outlet property="nextButton" destination="VAb-ia-5yb" id="34J-R9-QLN"/>
                         <outlet property="redTextField" destination="f7U-JH-9NM" id="2NF-Nd-i5G"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="NRh-tB-bB4"/>
